@@ -1,9 +1,11 @@
 package org.com.lr.mapper.service;
 
+import com.alibaba.druid.support.json.JSONUtils;
 import com.alibaba.druid.util.StringUtils;
 import org.com.lr.mapper.HrMapper;
 import org.com.lr.mapper.HrRoleMapper;
 import org.com.lr.mapper.model.Hr;
+import org.com.lr.mapper.model.Menu;
 import org.com.lr.mapper.model.RespBean;
 import org.com.lr.mapper.utils.HrUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +33,9 @@ public class HrService implements UserDetailsService {
     HrMapper hrMapper;
     @Autowired
     HrRoleMapper hrRoleMapper;
+
+    @Autowired
+    MenuService menuService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -90,6 +95,9 @@ public class HrService implements UserDetailsService {
         if(!checkResult){
             return RespBean.error("缺少必传字段值!");
         }
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        String enpassword = encoder.encode(hr.getPassword());
+        hr.setPassword(enpassword);
         this.doRetister(hr);
         return RespBean.build().setStatus(200).setObj(hr).setMsg("注册成功");
     }
@@ -98,9 +106,9 @@ public class HrService implements UserDetailsService {
     验证必须传字段是否传了
      */
     private boolean checkHrInfo(Hr hr) {
-        if(hr == null || StringUtils.isEmpty(hr.getName()) ||
+        if(hr == null ||
         StringUtils.isEmpty(hr.getPassword()) || StringUtils.isEmpty(hr.getUsername()) ||
-        StringUtils.isEmpty(hr.getAddress()) || StringUtils.isEmpty(hr.getPhone())){
+         StringUtils.isEmpty(hr.getPhone())){
             return false;
         }
         return true;

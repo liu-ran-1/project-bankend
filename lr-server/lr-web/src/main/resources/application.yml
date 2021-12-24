@@ -21,6 +21,8 @@ server:
   port: 8081
   compression:
     enabled: true
+  servlet:
+    context-path: /bankend
 fastdfs:
   nginx:
     host: http://82.156.187.67/
