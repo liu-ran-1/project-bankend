@@ -17,6 +17,7 @@
         <module>lr-service</module>
         <module>lr-mapper</module>
         <module>lr-model</module>
+        <module>lr-common</module>
     </modules>
 
 </project>
