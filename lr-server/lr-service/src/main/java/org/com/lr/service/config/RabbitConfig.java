@@ -1,7 +1,7 @@
-package org.com.lr.mapper.config;
+package org.com.lr.service.config;
 
 import org.com.lr.mapper.model.MailConstants;
-import org.com.lr.mapper.service.MailSendLogService;
+import org.com.lr.service.service.MailSendLogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Binding;

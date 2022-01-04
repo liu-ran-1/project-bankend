@@ -1,6 +1,6 @@
 package org.com.lr.mapper.config;
 
-import org.com.lr.mapper.service.MenuService;
+import org.com.lr.service.service.MenuService;
 import org.com.lr.mapper.model.Menu;
 import org.com.lr.mapper.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;

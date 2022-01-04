@@ -1,4 +1,4 @@
-package org.com.lr.mapper.utils;
+package org.com.lr.service.utils;
 
 import org.apache.poi.hpsf.DocumentSummaryInformation;
 import org.apache.poi.hpsf.SummaryInformation;

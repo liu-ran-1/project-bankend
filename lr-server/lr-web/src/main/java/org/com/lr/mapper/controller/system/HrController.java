@@ -1,8 +1,8 @@
 package org.com.lr.mapper.controller.system;
 
 import org.com.lr.mapper.model.Hr;
-import org.com.lr.mapper.service.HrService;
-import org.com.lr.mapper.service.RoleService;
+import org.com.lr.service.service.HrService;
+import org.com.lr.service.service.RoleService;
 import org.com.lr.mapper.model.RespBean;
 import org.com.lr.mapper.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;

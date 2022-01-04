@@ -1,4 +1,4 @@
-package org.com.lr.mapper.service;
+package org.com.lr.service.service;
 
 import org.com.lr.mapper.model.RespBean;
 import org.springframework.web.multipart.MultipartFile;

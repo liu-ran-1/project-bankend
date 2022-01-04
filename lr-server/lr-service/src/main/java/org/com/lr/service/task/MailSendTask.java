@@ -1,10 +1,10 @@
-package org.com.lr.mapper.task;
+package org.com.lr.service.task;
 
 import org.com.lr.mapper.model.Employee;
 import org.com.lr.mapper.model.MailConstants;
 import org.com.lr.mapper.model.MailSendLog;
-import org.com.lr.mapper.service.EmployeeService;
-import org.com.lr.mapper.service.MailSendLogService;
+import org.com.lr.service.service.EmployeeService;
+import org.com.lr.service.service.MailSendLogService;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

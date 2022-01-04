@@ -1,7 +1,7 @@
 package org.com.lr.mapper.controller.salary;
 
 import org.com.lr.mapper.model.Salary;
-import org.com.lr.mapper.service.SalaryService;
+import org.com.lr.service.service.SalaryService;
 import org.com.lr.mapper.model.RespBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

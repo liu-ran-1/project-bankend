@@ -1,4 +1,4 @@
-package org.com.lr.mapper.service;
+package org.com.lr.service.service;
 
 import org.com.lr.mapper.SalaryMapper;
 import org.com.lr.mapper.model.Salary;

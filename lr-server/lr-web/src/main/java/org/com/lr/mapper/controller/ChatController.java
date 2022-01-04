@@ -1,7 +1,7 @@
 package org.com.lr.mapper.controller;
 
 import org.com.lr.mapper.model.Hr;
-import org.com.lr.mapper.service.HrService;
+import org.com.lr.service.service.HrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

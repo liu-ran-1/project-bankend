@@ -1,13 +1,11 @@
-package org.com.lr.mapper.service;
+package org.com.lr.service.service;
 
-import com.alibaba.druid.support.json.JSONUtils;
 import com.alibaba.druid.util.StringUtils;
 import org.com.lr.mapper.HrMapper;
 import org.com.lr.mapper.HrRoleMapper;
 import org.com.lr.mapper.model.Hr;
-import org.com.lr.mapper.model.Menu;
 import org.com.lr.mapper.model.RespBean;
-import org.com.lr.mapper.utils.HrUtils;
+import org.com.lr.service.utils.HrUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

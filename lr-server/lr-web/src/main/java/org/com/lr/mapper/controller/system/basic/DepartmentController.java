@@ -1,7 +1,7 @@
 package org.com.lr.mapper.controller.system.basic;
 
 import org.com.lr.mapper.model.Department;
-import org.com.lr.mapper.service.DepartmentService;
+import org.com.lr.service.service.DepartmentService;
 import org.com.lr.mapper.model.RespBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

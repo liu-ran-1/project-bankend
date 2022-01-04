@@ -1,7 +1,7 @@
 package org.com.lr.mapper.controller.system.basic;
 
-import org.com.lr.mapper.service.MenuService;
-import org.com.lr.mapper.service.RoleService;
+import org.com.lr.service.service.MenuService;
+import org.com.lr.service.service.RoleService;
 import org.com.lr.mapper.model.Menu;
 import org.com.lr.mapper.model.RespBean;
 import org.com.lr.mapper.model.Role;

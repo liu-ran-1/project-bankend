@@ -1,6 +1,6 @@
 package org.com.lr.mapper.controller.system.basic;
 
-import org.com.lr.mapper.service.JobLevelService;
+import org.com.lr.service.service.JobLevelService;
 import org.com.lr.mapper.model.JobLevel;
 import org.com.lr.mapper.model.RespBean;
 import org.springframework.beans.factory.annotation.Autowired;

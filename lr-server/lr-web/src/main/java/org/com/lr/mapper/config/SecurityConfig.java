@@ -2,7 +2,7 @@ package org.com.lr.mapper.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.com.lr.mapper.model.Hr;
-import org.com.lr.mapper.service.HrService;
+import org.com.lr.service.service.HrService;
 import org.com.lr.mapper.model.RespBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

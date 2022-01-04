@@ -2,7 +2,7 @@ package org.com.lr.mapper.controller;
 
 import org.com.lr.mapper.config.FastDFSUtils;
 import org.com.lr.mapper.model.Hr;
-import org.com.lr.mapper.service.HrService;
+import org.com.lr.service.service.HrService;
 import org.com.lr.mapper.model.RespBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
 import java.util.Map;
 
 /**
