@@ -9,9 +9,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.session.SessionRegistry;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
 import java.util.Map;
 
 /**
@@ -31,6 +35,9 @@ public class HrInfoController {
 
     @Value("${fastdfs.nginx.host}")
     String nginxHost;
+
+    @Autowired
+    SessionRegistry sessionRegistry;
 
     @GetMapping("/hr/info")
     public Hr getCurrentHr(Authentication authentication) {
@@ -71,8 +78,14 @@ public class HrInfoController {
     }
 
     @PostMapping("/register")
-    public RespBean register(@RequestBody Hr hr) {
+    public RespBean register(@RequestBody Hr hr, HttpServletRequest request) {
+
+        sessionRegistry.registerNewSession(request.getSession(true).getId(), hr);
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        String encode = bCryptPasswordEncoder.encode(hr.getPassword());
+        hr.setPassword(encode);
         return hrService.register(hr);
+
     }
 
 }
