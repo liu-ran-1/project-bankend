@@ -1,7 +1,7 @@
-package org.com.lr.mapper.controller;
+package org.com.lr.controller;
 
-import org.com.lr.mapper.model.ChatMsg;
-import org.com.lr.mapper.model.Hr;
+import org.com.lr.model.ChatMsg;
+import org.com.lr.model.Hr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;

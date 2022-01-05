@@ -1,10 +1,10 @@
-package org.com.lr.mapper.controller.salary;
+package org.com.lr.controller.salary;
 
-import org.com.lr.mapper.model.RespPageBean;
-import org.com.lr.mapper.model.Salary;
+import org.com.lr.model.RespPageBean;
+import org.com.lr.model.Salary;
 import org.com.lr.service.service.EmployeeService;
 import org.com.lr.service.service.SalaryService;
-import org.com.lr.mapper.model.RespBean;
+import org.com.lr.model.RespBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

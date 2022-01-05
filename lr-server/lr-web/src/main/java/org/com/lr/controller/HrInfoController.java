@@ -1,9 +1,9 @@
-package org.com.lr.mapper.controller;
+package org.com.lr.controller;
 
-import org.com.lr.mapper.config.FastDFSUtils;
-import org.com.lr.mapper.model.Hr;
+import org.com.lr.config.FastDFSUtils;
+import org.com.lr.model.Hr;
 import org.com.lr.service.service.HrService;
-import org.com.lr.mapper.model.RespBean;
+import org.com.lr.model.RespBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

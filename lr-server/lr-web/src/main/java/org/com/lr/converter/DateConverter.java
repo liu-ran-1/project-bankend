@@ -1,4 +1,4 @@
-package org.com.lr.mapper.converter;
+package org.com.lr.converter;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;

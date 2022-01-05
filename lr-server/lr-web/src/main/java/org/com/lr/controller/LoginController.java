@@ -1,7 +1,7 @@
-package org.com.lr.mapper.controller;
+package org.com.lr.controller;
 
-import org.com.lr.mapper.config.VerificationCode;
-import org.com.lr.mapper.model.RespBean;
+import org.com.lr.config.VerificationCode;
+import org.com.lr.model.RespBean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

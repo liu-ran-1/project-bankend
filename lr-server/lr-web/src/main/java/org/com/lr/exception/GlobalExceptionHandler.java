@@ -1,6 +1,6 @@
-package org.com.lr.mapper.exception;
+package org.com.lr.exception;
 
-import org.com.lr.mapper.model.RespBean;
+import org.com.lr.model.RespBean;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

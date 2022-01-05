@@ -1,10 +1,10 @@
-package org.com.lr.mapper.controller.system;
+package org.com.lr.controller.system;
 
-import org.com.lr.mapper.model.Hr;
+import org.com.lr.model.Hr;
 import org.com.lr.service.service.HrService;
 import org.com.lr.service.service.RoleService;
-import org.com.lr.mapper.model.RespBean;
-import org.com.lr.mapper.model.Role;
+import org.com.lr.model.RespBean;
+import org.com.lr.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

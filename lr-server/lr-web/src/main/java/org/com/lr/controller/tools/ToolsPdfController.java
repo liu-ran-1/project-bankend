@@ -1,6 +1,6 @@
-package org.com.lr.mapper.controller.tools;
+package org.com.lr.controller.tools;
 
-import org.com.lr.mapper.model.RespBean;
+import org.com.lr.model.RespBean;
 import org.com.lr.service.service.ToolsPdfService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
