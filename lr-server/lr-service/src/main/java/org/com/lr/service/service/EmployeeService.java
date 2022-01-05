@@ -1,10 +1,10 @@
 package org.com.lr.service.service;
 
-import org.com.lr.mapper.EmployeeMapper;
-import org.com.lr.mapper.model.Employee;
-import org.com.lr.mapper.model.RespPageBean;
-import org.com.lr.mapper.model.MailConstants;
-import org.com.lr.mapper.model.MailSendLog;
+import org.com.lr.EmployeeMapper;
+import org.com.lr.model.Employee;
+import org.com.lr.model.RespPageBean;
+import org.com.lr.model.MailConstants;
+import org.com.lr.model.MailSendLog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.connection.CorrelationData;

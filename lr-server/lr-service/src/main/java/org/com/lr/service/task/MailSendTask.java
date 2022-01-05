@@ -1,8 +1,8 @@
 package org.com.lr.service.task;
 
-import org.com.lr.mapper.model.Employee;
-import org.com.lr.mapper.model.MailConstants;
-import org.com.lr.mapper.model.MailSendLog;
+import org.com.lr.model.Employee;
+import org.com.lr.model.MailConstants;
+import org.com.lr.model.MailSendLog;
 import org.com.lr.service.service.EmployeeService;
 import org.com.lr.service.service.MailSendLogService;
 import org.springframework.amqp.rabbit.connection.CorrelationData;

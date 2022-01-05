@@ -1,6 +1,6 @@
 package org.com.lr.service.config;
 
-import org.com.lr.mapper.model.MailConstants;
+import org.com.lr.model.MailConstants;
 import org.com.lr.service.service.MailSendLogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

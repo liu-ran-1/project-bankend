@@ -1,6 +1,6 @@
 package org.com.lr.service.utils;
 
-import org.com.lr.mapper.model.Hr;
+import org.com.lr.model.Hr;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 /**

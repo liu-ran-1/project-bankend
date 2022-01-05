@@ -2,7 +2,7 @@ package org.com.lr.service.service.impl;
 
 import java.io.IOException;
 import java.io.InputStream;
-import org.com.lr.mapper.model.RespBean;
+import org.com.lr.model.RespBean;
 import org.com.lr.service.service.ToolsPdfService;
 import org.lr.com.minio.MinioUtils;
 import org.springframework.stereotype.Component;

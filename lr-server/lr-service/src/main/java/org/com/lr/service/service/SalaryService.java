@@ -1,7 +1,7 @@
 package org.com.lr.service.service;
 
-import org.com.lr.mapper.SalaryMapper;
-import org.com.lr.mapper.model.Salary;
+import org.com.lr.SalaryMapper;
+import org.com.lr.model.Salary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

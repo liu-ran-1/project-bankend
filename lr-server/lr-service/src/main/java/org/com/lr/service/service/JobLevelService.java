@@ -1,7 +1,7 @@
 package org.com.lr.service.service;
 
-import org.com.lr.mapper.JobLevelMapper;
-import org.com.lr.mapper.model.JobLevel;
+import org.com.lr.JobLevelMapper;
+import org.com.lr.model.JobLevel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

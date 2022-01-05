@@ -1,7 +1,7 @@
 package org.com.lr.service.service;
 
-import org.com.lr.mapper.RoleMapper;
-import org.com.lr.mapper.model.Role;
+import org.com.lr.RoleMapper;
+import org.com.lr.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

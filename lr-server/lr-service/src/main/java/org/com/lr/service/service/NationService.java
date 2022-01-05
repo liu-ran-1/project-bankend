@@ -1,7 +1,7 @@
 package org.com.lr.service.service;
 
-import org.com.lr.mapper.NationMapper;
-import org.com.lr.mapper.model.Nation;
+import org.com.lr.NationMapper;
+import org.com.lr.model.Nation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
