@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableCaching
-@MapperScan(basePackages = "org.com.lr")
+@MapperScan(basePackages = "org.com.lr.mapper")
 @EnableScheduling
 public class LrApplication {
 

@@ -1,6 +1,6 @@
 package org.com.lr.service.service;
 
-import org.com.lr.DepartmentMapper;
+import org.com.lr.mapper.DepartmentMapper;
 import org.com.lr.model.Department;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

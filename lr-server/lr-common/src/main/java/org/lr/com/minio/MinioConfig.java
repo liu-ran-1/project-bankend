@@ -5,9 +5,14 @@ import io.minio.errors.InvalidEndpointException;
 import io.minio.errors.InvalidPortException;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
+@Component
+@SpringBootConfiguration
 @Data
 @ConditionalOnProperty(prefix = "file",name = "type",value = "minio",matchIfMissing = true)
 public class MinioConfig {
@@ -22,7 +27,7 @@ public class MinioConfig {
   private String minioSecretKey;
 
   @Bean
-  private MinioClient minioClient(){
+  public MinioClient minioClient(){
     try {
       MinioClient minioClient = new MinioClient(minioEndPoint,minioAccessKey,minioSecretKey);
       return minioClient;

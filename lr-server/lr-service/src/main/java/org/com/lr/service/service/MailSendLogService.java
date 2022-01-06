@@ -1,6 +1,6 @@
 package org.com.lr.service.service;
 
-import org.com.lr.MailSendLogMapper;
+import org.com.lr.mapper.MailSendLogMapper;
 import org.com.lr.model.MailSendLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

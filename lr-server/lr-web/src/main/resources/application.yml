@@ -12,7 +12,7 @@ spring:
     publisher-returns: true
   redis:
     host: 82.156.187.67
-    database: 2
+    database: 3
     port: 36379
     password: 123456
   cache:
@@ -26,3 +26,9 @@ server:
 fastdfs:
   nginx:
     host: http://82.156.187.67/
+file:
+  type: minio
+minio:
+  endpoint:  http://82.156.187.67:9000/
+  accessKey: liuranandkexinlan
+  secretKey: liuranandkexinlan

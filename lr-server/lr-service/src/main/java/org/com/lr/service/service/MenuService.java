@@ -1,7 +1,7 @@
 package org.com.lr.service.service;
 
-import org.com.lr.MenuMapper;
-import org.com.lr.MenuRoleMapper;
+import org.com.lr.mapper.MenuMapper;
+import org.com.lr.mapper.MenuRoleMapper;
 import org.com.lr.model.Hr;
 import org.com.lr.model.Menu;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -6,16 +6,17 @@ import org.com.lr.model.RespBean;
 import org.com.lr.service.service.ToolsPdfService;
 import org.lr.com.minio.MinioUtils;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-@Component
+@Service
 public class ToolsPdfServiceImpl  implements ToolsPdfService {
 
   @Override
   public RespBean uploadPdf(MultipartFile file) {
     try {
       InputStream inputStream = file.getInputStream();
-      String name = file.getName();
+      String name = file.getOriginalFilename();
       MinioUtils.upLoadFile(name,inputStream);
     } catch (IOException e) {
       e.printStackTrace();

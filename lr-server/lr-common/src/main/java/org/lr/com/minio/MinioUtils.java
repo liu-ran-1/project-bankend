@@ -2,6 +2,8 @@ package org.lr.com.minio;
 
 import io.minio.MinioClient;
 import io.minio.PutObjectOptions;
+import io.minio.errors.InvalidEndpointException;
+import io.minio.errors.InvalidPortException;
 import io.minio.errors.MinioException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,8 +27,12 @@ public class MinioUtils {
   public static boolean upLoadMinioFile(String fileName, InputStream io)
       throws IOException, InvalidKeyException, MinioException, NoSuchAlgorithmException {
     String bucketName = MinioBucketNameEnum.getBucketNameByPath(fileName);
-    PutObjectOptions putObjectOptions = new PutObjectOptions(PutObjectOptions.MAX_OBJECT_SIZE, PutObjectOptions.MAX_PART_SIZE);
-    minioClient.putObject(bucketName, fileName, io, putObjectOptions);
+    PutObjectOptions putObjectOptions = new PutObjectOptions(io.available(), 0);
+    boolean b = minioClient().bucketExists(bucketName);
+    if(!b){
+      minioClient().makeBucket(bucketName);
+    }
+    minioClient().putObject(bucketName, fileName, io, putObjectOptions);
     return true;
   }
 
@@ -48,7 +54,14 @@ public class MinioUtils {
 
   private static MinioClient minioClient() {
     if (minioClient == null) {
-      minioClient = SpringContextHolder.getBean(MinioClient.class);
+      try {
+         minioClient = new MinioClient("http://82.156.187.67:9000/","liuranandkexinlan","liuranandkexinlan");
+        return minioClient;
+      } catch (InvalidEndpointException e) {
+        e.printStackTrace();
+      } catch (InvalidPortException e) {
+        e.printStackTrace();
+      }
     }
     if (minioClient == null) {
       new Exception("minio clinet not init");

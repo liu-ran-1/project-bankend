@@ -1,6 +1,6 @@
 package org.com.lr.service.service;
 
-import org.com.lr.EmployeeMapper;
+import org.com.lr.mapper.EmployeeMapper;
 import org.com.lr.model.Employee;
 import org.com.lr.model.RespPageBean;
 import org.com.lr.model.MailConstants;
