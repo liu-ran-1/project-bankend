@@ -29,6 +29,6 @@ fastdfs:
 file:
   type: minio
 minio:
-  endpoint:  http://82.156.187.67:9000/
+  endpoint: http://82.156.187.67:9000/
   accessKey: liuranandkexinlan
   secretKey: liuranandkexinlan

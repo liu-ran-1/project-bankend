@@ -1,4 +1,4 @@
-package org.lr.com.minio;
+package org.com.lr.common.minio;
 
 import io.minio.MinioClient;
 import io.minio.PutObjectOptions;
@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import org.lr.springcontext.SpringContextHolder;
 
 public class MinioUtils {
 
@@ -54,14 +53,20 @@ public class MinioUtils {
 
   private static MinioClient minioClient() {
     if (minioClient == null) {
-      try {
-         minioClient = new MinioClient("http://82.156.187.67:9000/","liuranandkexinlan","liuranandkexinlan");
-        return minioClient;
-      } catch (InvalidEndpointException e) {
-        e.printStackTrace();
-      } catch (InvalidPortException e) {
-        e.printStackTrace();
+      synchronized (minioClient){
+        if(minioClient != null){
+          return minioClient;
+        }
+        try {
+          minioClient = new MinioClient("http://82.156.187.67:9000/","liuranandkexinlan","liuranandkexinlan");
+          return minioClient;
+        } catch (InvalidEndpointException e) {
+          e.printStackTrace();
+        } catch (InvalidPortException e) {
+          e.printStackTrace();
+        }
       }
+
     }
     if (minioClient == null) {
       new Exception("minio clinet not init");

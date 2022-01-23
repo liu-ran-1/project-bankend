@@ -1,4 +1,4 @@
-package org.lr.com.minio;
+package org.com.lr.common.minio;
 
 import lombok.Data;
 

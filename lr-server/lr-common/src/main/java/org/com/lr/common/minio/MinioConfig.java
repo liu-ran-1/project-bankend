@@ -1,4 +1,4 @@
-package org.lr.com.minio;
+package org.com.lr.common.minio;
 
 import io.minio.MinioClient;
 import io.minio.errors.InvalidEndpointException;
@@ -11,10 +11,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-@Component
-@SpringBootConfiguration
+@Configuration
 @Data
-@ConditionalOnProperty(prefix = "file",name = "type",value = "minio",matchIfMissing = true)
+@ConditionalOnProperty(prefix = "file",name = "type",havingValue = "minio",matchIfMissing = false)
 public class MinioConfig {
 
     @Value("${minio.endpoint}")
