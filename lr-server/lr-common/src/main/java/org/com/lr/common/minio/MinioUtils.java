@@ -60,9 +60,7 @@ public class MinioUtils {
     if (minioClient == null) {
       try {
         minioClient = new MinioClient("http://82.156.187.67:9000/","liuranandkexinlan","liuranandkexinlan");
-      } catch (InvalidEndpointException e) {
-        e.printStackTrace();
-      } catch (InvalidPortException e) {
+      } catch (Exception e) {
         e.printStackTrace();
       }
 //      minioClient = SpringContextHolder.getBean(MinioClient.class);

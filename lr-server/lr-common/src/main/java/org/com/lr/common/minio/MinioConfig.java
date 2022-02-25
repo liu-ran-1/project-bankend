@@ -30,9 +30,7 @@ public class MinioConfig {
     try {
       MinioClient minioClient = new MinioClient(minioEndPoint,minioAccessKey,minioSecretKey);
       return minioClient;
-    } catch (InvalidEndpointException e) {
-      e.printStackTrace();
-    } catch (InvalidPortException e) {
+    }  catch (Exception e) {
       e.printStackTrace();
     }
     return null;
