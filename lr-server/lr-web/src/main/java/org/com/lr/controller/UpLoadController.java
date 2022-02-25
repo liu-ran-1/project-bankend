@@ -16,6 +16,7 @@ public class UpLoadController {
     @PostMapping
     public RespBean uploadFile(MultipartFile multipartFile){
         RespBean respBean = upLoadService.uploadFile(multipartFile);
+        return null;
     }
 
 

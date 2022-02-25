@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import org.com.lr.common.springcontext.SpringContextHolder;
 
 public class MinioUtils {
 
@@ -52,21 +53,19 @@ public class MinioUtils {
   }
 
   private static MinioClient minioClient() {
-    if (minioClient == null) {
-      synchronized (minioClient){
-        if(minioClient != null){
-          return minioClient;
-        }
-        try {
-          minioClient = new MinioClient("http://82.156.187.67:9000/","liuranandkexinlan","liuranandkexinlan");
-          return minioClient;
-        } catch (InvalidEndpointException e) {
-          e.printStackTrace();
-        } catch (InvalidPortException e) {
-          e.printStackTrace();
-        }
-      }
+    if(minioClient != null){
+      return minioClient;
+    }
 
+    if (minioClient == null) {
+      try {
+        minioClient = new MinioClient("http://82.156.187.67:9000/","liuranandkexinlan","liuranandkexinlan");
+      } catch (InvalidEndpointException e) {
+        e.printStackTrace();
+      } catch (InvalidPortException e) {
+        e.printStackTrace();
+      }
+//      minioClient = SpringContextHolder.getBean(MinioClient.class);
     }
     if (minioClient == null) {
       new Exception("minio clinet not init");
