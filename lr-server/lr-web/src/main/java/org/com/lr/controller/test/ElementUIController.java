@@ -1,12 +1,20 @@
 package org.com.lr.controller.test;
 
+import com.alibaba.druid.sql.PagerUtils;
+import com.alibaba.druid.support.json.JSONUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonValueFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.apache.poi.ss.formula.functions.T;
 import org.com.lr.model.RespBean;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -14,16 +22,38 @@ import org.springframework.web.multipart.MultipartFile;
 public class ElementUIController {
 
   @RequestMapping("/test")
-  public RespBean uploadPdf() {
+  public RespBean uploadPdf(@RequestParam("param")String paramMap) {
+    Map<String,Object> param = (Map<String, Object>) JSONUtils.parse(paramMap);
+    int currentPage = Integer.valueOf(param.get("currentPage").toString());
+    int pageSize = Integer.valueOf(param.get("pageSize").toString());
     List<Map<String,Object>> list = new ArrayList<>();
-    for(int i = 0;i<1;i++){
+    for(int i = 0;i<35;i++){
       Map<String,Object> row = new HashMap<>();
       row.put("date","2022-02-22 22:22:22");
-      row.put("name","ranliu");
-      row.put("address","汤臣一品");
+      row.put("name","ranliu"+i);
+      row.put("address","汤臣一品"+i);
+      //1是可以编辑，0是不可以编辑
+      row.put("status","1");
       list.add(row);
     }
-    return  RespBean.build().setObj(list);
+    int count = 0;
+    if(list != null && list.size() > 0) {
+      count = list.size();
+      int fromIndex = (currentPage-1) * pageSize;
+      int toIndex = (currentPage ) * pageSize;
+      if (toIndex > count) {
+        toIndex = count;
+      }
+      List<Map<String,Object>> pageList = list.subList(fromIndex, toIndex);
+      Map<String,Object> rtnMap = new HashMap<>();
+      rtnMap.put("totalSize",list.size());
+      rtnMap.put("data",pageList);
+      return RespBean.build().setObj(rtnMap);
+    }
+    Map<String,Object> rtnMap = new HashMap<>();
+    rtnMap.put("totalSize",list.size());
+    rtnMap.put("data",list);
+    return  RespBean.build().setObj(rtnMap);
 
 
   }
