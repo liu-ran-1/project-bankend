@@ -1,24 +1,18 @@
 package org.com.lr.controller.test;
 
-import com.alibaba.druid.sql.PagerUtils;
 import com.alibaba.druid.support.json.JSONUtils;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonValueFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.apache.poi.ss.formula.functions.T;
+
+import com.alibaba.fastjson.JSON;
+import org.com.lr.dto.EmpDto;
 import org.com.lr.model.RespBean;
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@ResponseBody
 public class ElementUIController {
 
   @RequestMapping("/test")
@@ -105,5 +99,13 @@ public class ElementUIController {
           return "el-icon-menu";
     }
   }
+
+    @RequestMapping("/saveRow")
+    public RespBean saveRow(@RequestBody Map<String,EmpDto> empDtoMap) {
+      System.out.println(JSON.toJSONString(empDtoMap));
+        return  RespBean.build().setStatus(0);
+
+
+    }
 
 }
