@@ -78,10 +78,16 @@ public class ElementUIController {
     row.put("navName","导航"+(i+1));
     List<Map<String,Object>> childList = new ArrayList<>();
     Map<String,Object> childRow = new HashMap<>();
-    childRow.put("title","分组1");
-    List<String> titleList = new ArrayList<>();
-    titleList.add("选项1");
-    titleList.add("选项2");
+    childRow.put("title","分组"+(i+1));
+    List<Map<String,Object>> titleList = new ArrayList<>();
+    Map<String,Object> detailRow = new HashMap<>();
+    detailRow.put("name","选项"+(i+1));
+    if(i ==0){
+        detailRow.put("route","/content");
+    }else if( i ==1){
+        detailRow.put("route","/setting");
+    }
+    titleList.add(detailRow);
     childRow.put("options",titleList);
     childRow.put("menuType","el-icon-menu");
     childList.add(childRow);
