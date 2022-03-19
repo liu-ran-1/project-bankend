@@ -1,10 +1,14 @@
 package org.com.lr.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.ToString;
 
 import java.io.Serializable;
 
 @Data
+@ToString
+@AllArgsConstructor
 public class EmpDto implements Serializable {
 
     private String date;
@@ -14,6 +18,7 @@ public class EmpDto implements Serializable {
     private String name ;
 
     private String status;
+
 
     public String getDate() {
         return date;
