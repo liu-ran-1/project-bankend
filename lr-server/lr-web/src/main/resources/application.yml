@@ -13,10 +13,14 @@ spring:
   redis:
     host: 82.156.187.67
     database: 3
-    port: 36379
+    port: 6379
     password: 123456
   cache:
     cache-names: menus_cache
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    clean-on-validation-error: true
 server:
   port: 1111
   compression:
