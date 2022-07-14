@@ -1,10 +1,8 @@
 package org.com.lr.controller.test;
 
 import com.alibaba.druid.support.json.JSONUtils;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 
 import com.alibaba.fastjson.JSON;
 import org.com.lr.dto.EmpDto;
@@ -107,11 +105,37 @@ public class ElementUIController {
   }
 
     @RequestMapping("/saveRow")
-    public RespBean saveRow(@RequestBody Map<String,EmpDto> empDtoMap) {
+    public RespBean saveRow(@RequestBody(required = false) Map<String,EmpDto> empDtoMap) {
       System.out.println(JSON.toJSONString(empDtoMap));
         return  RespBean.build().setStatus(0);
 
 
     }
+
+  @RequestMapping("/chartsData")
+  @ResponseBody
+  public RespBean chartsData(@RequestParam("charParam") String charParam) {
+    System.out.println(JSON.toJSON(charParam));
+    Map<String,Object> rtnMap = new HashMap<>();
+    List<String> xAxisList = new ArrayList<>();
+    for(int i=1;i<=7;i++){
+      xAxisList.add("星期"+i);
+    }
+  rtnMap.put("xAxis",xAxisList);
+    List<List<Integer>> lists = new ArrayList<>();
+    List<Integer> seriesList = new ArrayList<>();
+    List<Integer> seriesList2 = new ArrayList<>();
+    Random random = new Random();
+      for(int i=1;i<=7;i++){
+        seriesList.add(random.nextInt(100));
+        seriesList2.add(random.nextInt(100));
+      }
+      lists.add(seriesList);
+      lists.add(seriesList2);
+      rtnMap.put("series",lists);
+    return  RespBean.build().setStatus(0).setObj(rtnMap);
+
+
+  }
 
 }
